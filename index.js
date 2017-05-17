@@ -6,6 +6,8 @@ var through = require('through2'),
 //var indexBundle = require('./lib/index.bundle.js');
 
 function mergeFile(moduleCmdCode){
+  var raxNote = '// {"framework" : "Rax"}';
+  var rax = fs.readFileSync(__dirname + '/lib/rax.js', 'utf-8');
   var indexBundle = fs.readFileSync(__dirname + '/lib/index.bundle.js', 'utf-8');
   var moduleData = fs.readFileSync(process.cwd() + '/data/weex-mock.json', 'utf-8');
 
@@ -16,7 +18,7 @@ function mergeFile(moduleCmdCode){
   }
   var dataFileContent = 'define("@page/data", function(require, exports, module){module.exports = ' + moduleData + '});';
 
-  return indexBundle + moduleCmdCode + dataFileContent;
+  return raxNote + rax + indexBundle.replace(raxNote, '') + moduleCmdCode + dataFileContent;
 }
 
 /**
