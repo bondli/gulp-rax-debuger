@@ -14,11 +14,9 @@ function mergeFile(moduleCmdCode){
   if(moduleData.indexOf('gdc') <= -1){
     moduleData = '{"gdc":' + gdc + ', "mds":' + moduleData + '}';
   }
-  var dataFileContent = 'define("@page/data", function(require, exports, module){';
-  dataFileContent += 'module.exports = ' + moduleData;
-  dataFileContent += '});';
+  var dataFileContent = 'define("@page/data", function(require, exports, module){module.exports = ' + moduleData + '});';
 
-  return moduleCmdCode + dataFileContent + indexBundle;
+  return indexBundle + moduleCmdCode + dataFileContent;
 }
 
 /**
