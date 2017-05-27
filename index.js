@@ -18,7 +18,7 @@ function mergeFile(moduleCmdCode){
   }
   var dataFileContent = 'define("@page/data", function(require, exports, module){module.exports = ' + moduleData + '});';
 
-  return raxNote + "\n" + rax + indexBundle.replace(raxNote, '') + moduleCmdCode + dataFileContent;
+  return raxNote + "\n" + rax + moduleCmdCode + dataFileContent + indexBundle.replace(raxNote, '');
 }
 
 /**
