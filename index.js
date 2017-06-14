@@ -8,7 +8,7 @@ var through = require('through2'),
 function mergeFile(moduleCmdCode){
   var raxNote = '// {"framework" : "Rax"}';
   var rax = fs.readFileSync(__dirname + '/lib/rax.js', 'utf-8');
-  var indexBundle = fs.readFileSync(__dirname + '/lib/index.bundle.js', 'utf-8');
+  var indexBundle = fs.readFileSync(__dirname + '/lib/index.bundle.js', 'utf-8'); //来自辟蹊个人gitlab工程rax-debuger中的代码
   var moduleData = fs.readFileSync(process.cwd() + '/data/weex-mock.json', 'utf-8');
 
   var gdc = '{"title": "Rax && WeAPP","pageId": 75527005,"userId": 2202220535,"uuidRqt": "f256eb6b-38ab-412e-acb2-b1670e2b7d03","extParam": "{}","loginUserId": "0","shopId": 112772958,"pathInfo": "shop/activity","path": "shop/activity","pageName": "Page_WeApp","atp_isdpp": "4v112772958","at_isb": "0","at_alis": "1_2202220535"}';

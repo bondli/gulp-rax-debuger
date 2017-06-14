@@ -1,6 +1,6 @@
 {
   "name": "gulp-rax-debuger",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Plugin generate weex.bundle.js to playground debug",
   "main": "index.js",
   "repository": {
